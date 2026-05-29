@@ -12,4 +12,8 @@ if [[ -n "${SENDSPIN_SERVER_URL}" ]]; then
     set -- "$@" "--url" "$SENDSPIN_SERVER_URL"
 fi
 
+if [[ -n "${SENDSPIN_ID}" ]]; then
+    set -- "$@" "--id" "$SENDSPIN_ID"
+fi
+
 /usr/local/bin/sendspin daemon "$@"
